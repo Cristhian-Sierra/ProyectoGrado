@@ -38,7 +38,7 @@
     $servername = "localhost";
     $user="root";
     $database = "mydb";
-    $port = "3306";
+    $port = "3310";
     $password = "";
 
     $conn = mysqli_connect($servername, $user, $password, $database,$port) or die ("Sin conexion a BD");
