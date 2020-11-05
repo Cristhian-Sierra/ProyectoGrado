@@ -13,11 +13,11 @@ $password = "";
 $conn = mysqli_connect($servername, $user, $password, $database,$port) or die ("Sin conexion a BD");
 
 
-$sql="select idJournal, Country_idCountry
+$sql= "select j.idJournal,c.idCategory
 INTO OUTFILE 'D:\category.csv'
 FIELDS TERMINATED BY ','  LINES TERMINATED BY '\r\n'
-FROM journal
-WHERE categories LIKE  '%".$filtro."%' AND (best_quartile='Q1' or  best_quartile='Q2')"; 
+FROM journal as j, category as c
+WHERE   j.categories LIKE  '%".$filtro."%'  AND c.name='".$filtro."'";
 
 
 if($resul=$conn->query($sql)){
