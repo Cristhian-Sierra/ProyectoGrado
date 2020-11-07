@@ -2,7 +2,7 @@
 
 <?php  
 include("conexion.php"); // Conexion a nuestra BD 
-$filtro=$_GET["filtro"];
+//$filtro=$_GET["filtro"];
 
 $servername = "localhost";
 $user="root";
@@ -13,33 +13,56 @@ $password = "";
 $conn = mysqli_connect($servername, $user, $password, $database,$port) or die ("Sin conexion a BD");
 
 
-$sql= "
+$linea = 0;
+//Abrimos nuestro archivo
+$archivo = fopen("./scimagojr_category.csv", "r");
+//Lo recorremos
+while (($datos = fgetcsv($archivo)) == true)
+{
+    $num = count($datos);
+    $linea++;
+    //Recorremos las columnas de esa linea
+ 
+        
+        querysql($datos[0],$conn);
+        echo $datos[0] . ", \n";
+    
+}
+//Cerramos el archivo
+fclose($archivo);
+
+function querysql($filtro,$conn){
+    
+    $sql= "
 INSERT INTO journalcategory(Journal_idJournal,Category_idCategory)
 select j.idJournal,c.idCategory
 FROM journal as j, category as c
 WHERE   j.categories LIKE  '%".$filtro."%'  AND c.name='".$filtro."'";
-
-/*$sql2="INSERT INTO journalcategory ( Journal_idJournal, Category_idCategory)
-VALUES ('".$row['idJournal']."','".$row['idCategory']."')";*/
-
-
-$resul=$conn->query($sql);
-if($resul=$conn->query($sql)){
     
-    echo "<div class=\"alert alert-success\" role=\"success\">Datos  agregados correctamente</div>";
-   /* while($row = $resul->fetch_row()) {
+    /*$sql2="INSERT INTO journalcategory ( Journal_idJournal, Category_idCategory)
+     VALUES ('".$row['idJournal']."','".$row['idCategory']."')";*/
+    
+    
+    $resul=$conn->query($sql);
+    if($resul=$conn->query($sql)){
         
+        echo "<div class=\"alert alert-success\" role=\"success\">Datos  agregados correctamente</div>";
+        /* while($row = $resul->fetch_row()) {
+        
+        
+        $conn->query($sql2);
+        }*/
+    }
+    else{
+        echo "<div class=\"alert alert-danger\" role=\"success\">No se ha agergado nada</div>";
+        
+    }
+   
     
-        $conn->query($sql2);        
-    }*/
-}
-else{
-    echo "<div class=\"alert alert-danger\" role=\"success\">No se ha agergado nada</div>";
     
 }
+
 mysqli_close($conn);
-
-
 
 
 ?>  

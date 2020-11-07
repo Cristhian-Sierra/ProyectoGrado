@@ -66,7 +66,7 @@
 	        $i++;
 	    }
 	}
-	$resul->close();
+	$conn->close();
 ?>
  
 
