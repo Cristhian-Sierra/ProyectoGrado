@@ -7,6 +7,8 @@
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
+CREATE DATABASE mydb;
+use mydb;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -212,7 +214,7 @@ INSERT INTO `category` (`idCategory`, `name`, `Area_idArea`) VALUES
 (112, 'Civil and Structural Engineering', 13),
 (113, 'Computational Mechanics', 13),
 (114, 'Control and Systems Engineering', 13),
-(115, '', 13),
+(115, 'Electrical and Electronic Engineering', 13),
 (116, 'Engineering(miscellaneous)', 13),
 (117, 'Industrial and Manufacturing Engineering ', 13),
 (118, 'Mechanical Engineering', 13),
