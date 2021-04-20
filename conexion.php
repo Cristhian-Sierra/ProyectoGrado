@@ -37,7 +37,7 @@
   <?php 
     $servername = "localhost";
     $user="root";
-    $database = "mydb";
+    $database = "srs";
     $port = "3306";
     $password = "";
 

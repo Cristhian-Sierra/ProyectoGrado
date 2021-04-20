@@ -6,7 +6,7 @@ include("conexion.php"); // Conexion a nuestra BD
 
 $servername = "localhost";
 $user="root";
-$database = "mydb";
+$database = "srs";
 $port = "3306";
 $password = "";
 
