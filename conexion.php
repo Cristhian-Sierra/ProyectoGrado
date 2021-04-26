@@ -77,8 +77,8 @@
    
     
     <form action="extraer.php" method="GET">	
-   	 	<input name="filtro" class="form-control mr-sm-2" type="text" placeholder="Digite su categoria" aria-label="Search">		
-    	<input type="submit" class="btn btn-dark" value="Generate .CSV">
+   	 <br>	
+    	<input type="submit" class="btn btn-dark" value="Insert to JC">
     			
    </form>
     	
