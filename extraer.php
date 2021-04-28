@@ -37,7 +37,7 @@ function querysql($filtro,$conn){
 INSERT INTO journalcategory(Journal_idJournal,Category_idCategory)
 select j.idJournal,c.idCategory
 FROM journal as j, category as c
-WHERE   j.categories LIKE  '%".$filtro."%'  AND c.name LIKE '%".$filtro."%'";
+WHERE   j.categories LIKE  '%".$filtro."%'  AND c.name='".$filtro."' ";
     
     /*$sql2="INSERT INTO journalcategory ( Journal_idJournal, Category_idCategory)
      VALUES ('".$row['idJournal']."','".$row['idCategory']."')";*/
