@@ -46,8 +46,13 @@
 	$i=1;
 	if($resul=$conn->query($consulta)){
 	    echo "Consulta correcta"."<br>";
+<<<<<<< HEAD
 	    /*while($fila=$resul->fetch_row()){
 	        
+=======
+	    while($fila=$resul->fetch_row()){
+	        /*
+>>>>>>> master
 	        echo "<tr>";
 	        echo "<td>".$fila[0]."</td>";
 	        echo "<td>".$fila[1]."</td>";
@@ -64,7 +69,12 @@
             echo "<td>".$fila[12]."</td>";
 	        echo "</tr>";
 	        $i++;
+<<<<<<< HEAD
 	    }*/
+=======
+          */
+	    }
+>>>>>>> master
 	}
 	$conn->close();
 ?>
